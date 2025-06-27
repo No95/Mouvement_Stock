@@ -7,14 +7,14 @@
         <hint>allows you to track all stock movements for each entry, exit or transfer of material.</hint>
         <name/>
         <order/>
-        <roles>asset</roles>
+        <roles>asset,x_606284_stock_mov.stock_movements_user</roles>
         <sys_class_name>sys_app_application</sys_class_name>
         <sys_created_by>BL62F3EN</sys_created_by>
         <sys_created_on>2025-06-27 14:55:25</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>a3c08fc7835a6a9048d6ccc6feaad35f</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>stock movement</sys_name>
         <sys_overrides/>
         <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
@@ -22,7 +22,7 @@
         <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
         <sys_update_name>sys_app_application_a3c08fc7835a6a9048d6ccc6feaad35f</sys_update_name>
         <sys_updated_by>BL62F3EN</sys_updated_by>
-        <sys_updated_on>2025-06-27 14:55:25</sys_updated_on>
+        <sys_updated_on>2025-06-27 16:16:43</sys_updated_on>
         <title>stock movement</title>
         <view_name/>
     </sys_app_application>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element db_object_id="9723cf0f835a6a9048d6ccc6feaad334" label="stock movements" max_length="40" name="x_606284_stock_mov_x_606284_movstock" type="collection">
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element label="Asset" max_length="32" name="u_asset" reference="alm_asset" type="reference"/>
+        <element choice="1" label="Origin of movement" max_length="40" name="u_origin_movement" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Supplier reception" sequence="10" value="u_supplier_reception"/>
+                <element inactive_on_update="false" label="Stock transfer" sequence="20" value="u_stock_transfer"/>
+                <element inactive_on_update="false" label="Loss" sequence="30" value="u_loss"/>
+                <element inactive_on_update="false" label="Supplier return" sequence="40" value="u_supplier_return"/>
+                <element inactive_on_update="false" label="Installation" sequence="50" value="u_installation"/>
+                <element inactive_on_update="false" label="Stolen" sequence="60" value="u_stolen"/>
+                <element inactive_on_update="false" label="Reprise" sequence="70" value="u_reprise"/>
+            </choice>
+        </element>
+        <element label="Quantity" max_length="40" name="u_quantity" type="integer"/>
+        <element label="Stock" max_length="32" name="u_stock" reference="alm_stockroom" type="reference"/>
+        <element choice="1" label="Type of movement" max_length="40" name="u_type_movement" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Entry" value="u_entry"/>
+                <element inactive_on_update="false" label="Exit" value="u_exit"/>
+            </choice>
+        </element>
+        <index name="index">
+            <element name="u_asset"/>
+        </index>
+        <index name="index2">
+            <element name="u_stock"/>
+        </index>
+    </element>
+</database>

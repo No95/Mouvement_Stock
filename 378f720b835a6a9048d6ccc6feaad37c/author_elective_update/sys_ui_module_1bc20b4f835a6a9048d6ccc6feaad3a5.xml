@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module">
+    <sys_ui_module action="DELETE">
+        <active>true</active>
+        <application display_value="stock movement">9fc20b4f835a6a9048d6ccc6feaad3a1</application>
+        <filter/>
+        <name>stock movements</name>
+        <order/>
+        <path/>
+        <path_relative_to_root>false</path_relative_to_root>
+        <roles>x_606284_stock_mov.stock_movements_user</roles>
+        <sys_class_name>sys_ui_module</sys_class_name>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-06-27 15:04:08</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>1bc20b4f835a6a9048d6ccc6feaad3a5</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>stock movements</sys_name>
+        <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
+        <sys_update_name>sys_ui_module_1bc20b4f835a6a9048d6ccc6feaad3a5</sys_update_name>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-06-27 15:04:08</sys_updated_on>
+        <table>x_606284_stock_mov_x_606284_stock_movements</table>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+    </sys_ui_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</application>
+        <file_path/>
+        <instance_id>00b74a6cdb5ab958ebdd2a59139619fc</instance_id>
+        <instance_name>dev200011</instance_name>
+        <name>sys_ui_module_1bc20b4f835a6a9048d6ccc6feaad3a5</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ui_module"><sys_ui_module action="INSERT_OR_UPDATE"><active>true</active><application display_value="stock movement">9fc20b4f835a6a9048d6ccc6feaad3a1</application><filter/><name>stock movements</name><order/><path/><path_relative_to_root>false</path_relative_to_root><roles>x_606284_stock_mov.stock_movements_user</roles><sys_class_name>sys_ui_module</sys_class_name><sys_created_by>BL62F3EN</sys_created_by><sys_created_on>2025-06-27 15:04:08</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>1bc20b4f835a6a9048d6ccc6feaad3a5</sys_id><sys_mod_count>0</sys_mod_count><sys_name>stock movements</sys_name><sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package><sys_policy/><sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope><sys_update_name>sys_ui_module_1bc20b4f835a6a9048d6ccc6feaad3a5</sys_update_name><sys_updated_by>BL62F3EN</sys_updated_by><sys_updated_on>2025-06-27 15:04:08</sys_updated_on><table>x_606284_stock_mov_x_606284_stock_movements</table><uncancelable>false</uncancelable><view_name/></sys_ui_module></record_update>]]></payload>
+        <payload_hash>-653903539</payload_hash>
+        <record_name>stock movements</record_name>
+        <reverted_from/>
+        <source>ab4187cb835a6a9048d6ccc6feaad3da</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-06-27 15:04:08</sys_created_on>
+        <sys_id>dbc20b4f835a6a9048d6ccc6feaad3a8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>197b1eadc060000001</sys_recorded_at>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-06-27 15:04:08</sys_updated_on>
+        <type>Module</type>
+        <update_guid>dfc20b4f665a6a90f3278b8ea703b8a7</update_guid>
+        <update_guid_history>dfc20b4f665a6a90f3278b8ea703b8a7:-653903539</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-06-27 15:05:16</sys_created_on>
+        <sys_db_object display_value="" name="sys_ui_module">sys_ui_module</sys_db_object>
+        <sys_id>2695a04397074cdc8fe12e971ecb2690</sys_id>
+        <sys_metadata>1bc20b4f835a6a9048d6ccc6feaad3a5</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>stock movements</sys_name>
+        <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
+        <sys_scope_delete display_value="">549ab75ca7654e0682d61ec9cd309f44</sys_scope_delete>
+        <sys_update_name>sys_ui_module_1bc20b4f835a6a9048d6ccc6feaad3a5</sys_update_name>
+        <sys_update_version display_value="sys_ui_module_1bc20b4f835a6a9048d6ccc6feaad3a5">dbc20b4f835a6a9048d6ccc6feaad3a8</sys_update_version>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-06-27 15:05:16</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
