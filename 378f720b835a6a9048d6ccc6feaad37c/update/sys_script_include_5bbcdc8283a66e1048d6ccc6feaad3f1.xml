@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_606284_stock_mov.StockMovementUtils</api_name>
+        <caller_access/>
+        <client_callable>false</client_callable>
+        <description>utility for managing stock movements</description>
+        <mobile_callable>false</mobile_callable>
+        <name>StockMovementUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var StockMovementUtils = Class.create();
+StockMovementUtils.prototype = {
+    initialize: function() {},
+
+    createRecMovementStock: function(pol, rsl, qty, type) {
+        var TYPE_MVT = 'u_entry';
+        var ORIGIN_RECEPT = 'u_supplier_reception';
+
+
+        var mvtstk = new GlideRecord('x_606284_stock_mov_x_606284_movstock');
+        mvtstk.initialize();
+        mvtstk.u_type_movement = TYPE_MVT;
+        mvtstk.u_origin_movement = ORIGIN_RECEPT;
+        //rs.purchase_order = po.sys_id;
+		mvtstk.u_model = pol.model;
+        mvtstk.u_stock = rsl.receiving_slip.stockroom;
+        //mvtstk.insert();
+
+        var po = new GlideRecord('proc_po');
+        po.get(pol.purchase_order);
+
+        var asset = new GlideRecord('alm_asset');
+        asset.addQuery('purchase_line', pol.sys_id);
+        asset.addQuery('receiving_line', rsl.sys_id);
+
+        asset.query();
+        var itemNumber = 0;
+
+        while (qty > 0) {
+            if (asset.next()) {
+
+                if (type == 'hardware' || type == 'asset') {
+                    mvtstk.u_quantity = 1;
+					qty--;
+                } else {
+                    mvtstk.u_quantity = qty;
+					qty = 0;
+                }
+				mvtstk.u_asset = asset.sys_id;
+				mvtstk.insert();
+
+            }
+        }
+    },
+
+    type: 'StockMovementUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-07-06 10:42:10</sys_created_on>
+        <sys_id>5bbcdc8283a66e1048d6ccc6feaad3f1</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>StockMovementUtils</sys_name>
+        <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
+        <sys_update_name>sys_script_include_5bbcdc8283a66e1048d6ccc6feaad3f1</sys_update_name>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-07-11 13:07:55</sys_updated_on>
+    </sys_script_include>
+</record_update>

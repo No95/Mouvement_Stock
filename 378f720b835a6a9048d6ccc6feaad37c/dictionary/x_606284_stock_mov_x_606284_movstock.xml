@@ -2,6 +2,7 @@
     <element db_object_id="9723cf0f835a6a9048d6ccc6feaad334" label="stock movements" max_length="40" name="x_606284_stock_mov_x_606284_movstock" type="collection">
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element label="Asset" max_length="32" name="u_asset" reference="alm_asset" type="reference"/>
+        <element label="Model" max_length="32" name="u_model" reference="cmdb_model" type="reference"/>
         <element choice="1" label="Origin of movement" max_length="40" name="u_origin_movement" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Supplier reception" sequence="10" value="u_supplier_reception"/>
@@ -25,6 +26,9 @@
             <element name="u_asset"/>
         </index>
         <index name="index2">
+            <element name="u_model"/>
+        </index>
+        <index name="index3">
             <element name="u_stock"/>
         </index>
     </element>
