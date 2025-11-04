@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element db_object_id="9723cf0f835a6a9048d6ccc6feaad334" label="stock movements" max_length="40" name="x_606284_stock_mov_x_606284_movstock" type="collection">
+    <element audit="true" db_object_id="9723cf0f835a6a9048d6ccc6feaad334" label="stock movements" max_length="40" name="x_606284_stock_mov_x_606284_movstock" type="collection">
         <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
         <element label="Asset" max_length="32" name="u_asset" reference="alm_asset" type="reference"/>
+        <element choice="3" default="u_hardware" label="Type of Asset" max_length="40" name="u_assettype" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Hardware" sequence="10" value="u_hardware"/>
+                <element inactive_on_update="false" label="Consumable" sequence="20" value="u_consumable"/>
+                <element inactive_on_update="false" label="Software" sequence="30" value="u_software"/>
+                <element inactive_on_update="false" label="Other" sequence="50" value="u_other"/>
+            </choice>
+        </element>
+        <element label="Date of movement" max_length="40" name="u_date_movement" type="glide_date_time"/>
         <element label="Model" max_length="32" name="u_model" reference="cmdb_model" type="reference"/>
         <element choice="1" label="Origin of movement" max_length="40" name="u_origin_movement" type="choice">
             <choice>
@@ -14,6 +23,7 @@
                 <element inactive_on_update="false" label="Reprise" sequence="70" value="u_reprise"/>
             </choice>
         </element>
+        <element label="Product Catalog" max_length="32" name="u_product_catalog" reference="sc_cat_item" type="reference"/>
         <element label="Quantity" max_length="40" name="u_quantity" type="integer"/>
         <element label="Stock" max_length="32" name="u_stock" reference="alm_stockroom" type="reference"/>
         <element choice="1" label="Type of movement" max_length="40" name="u_type_movement" type="choice">
@@ -22,6 +32,7 @@
                 <element inactive_on_update="false" label="Exit" value="u_exit"/>
             </choice>
         </element>
+        <element label="Vendor" max_length="32" name="u_vendor" reference="core_company" reference_qual="vendor=true^EQ" reference_qual_condition="vendor=true^EQ" type="reference"/>
         <index name="index">
             <element name="u_asset"/>
         </index>
@@ -29,7 +40,13 @@
             <element name="u_model"/>
         </index>
         <index name="index3">
+            <element name="u_product_catalog"/>
+        </index>
+        <index name="index4">
             <element name="u_stock"/>
+        </index>
+        <index name="index5">
+            <element name="u_vendor"/>
         </index>
     </element>
 </database>

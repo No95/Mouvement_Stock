@@ -140,6 +140,62 @@
             <sys_user/>
             <type/>
         </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_vendor</element>
+            <position>10</position>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-11-02 08:35:45</sys_created_on>
+            <sys_id>ca6534588301321048d6ccc6feaad37f</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_606284_stock_mov_x_606284_movstock" sys_domain="global" view="Default view">1a1d7de7836a665048d6ccc6feaad36d</sys_ui_section>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-11-02 08:35:45</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_assettype</element>
+            <position>11</position>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-11-02 08:40:41</sys_created_on>
+            <sys_id>1e86bc988301321048d6ccc6feaad37e</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_606284_stock_mov_x_606284_movstock" sys_domain="global" view="Default view">1a1d7de7836a665048d6ccc6feaad36d</sys_ui_section>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-11-02 08:40:41</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_date_movement</element>
+            <position>12</position>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-11-02 08:51:07</sys_created_on>
+            <sys_id>83e8b49c8301321048d6ccc6feaad366</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_606284_stock_mov_x_606284_movstock" sys_domain="global" view="Default view">1a1d7de7836a665048d6ccc6feaad36d</sys_ui_section>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-11-02 08:51:07</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
+        <sys_ui_element action="INSERT_OR_UPDATE">
+            <element>u_product_catalog</element>
+            <position>13</position>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-11-02 08:58:36</sys_created_on>
+            <sys_id>70aab8108341321048d6ccc6feaad315</sys_id>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_ui_formatter/>
+            <sys_ui_section caption="NULL" display_value="" name="x_606284_stock_mov_x_606284_movstock" sys_domain="global" view="Default view">1a1d7de7836a665048d6ccc6feaad36d</sys_ui_section>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-11-02 08:58:36</sys_updated_on>
+            <sys_user/>
+            <type/>
+        </sys_ui_element>
         <sys_ui_section action="INSERT_OR_UPDATE">
             <caption/>
             <header>false</header>
