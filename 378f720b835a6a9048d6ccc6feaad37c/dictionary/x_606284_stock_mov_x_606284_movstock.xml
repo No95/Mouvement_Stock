@@ -25,6 +25,7 @@
         </element>
         <element label="Product Catalog" max_length="32" name="u_product_catalog" reference="sc_cat_item" type="reference"/>
         <element label="Quantity" max_length="40" name="u_quantity" type="integer"/>
+        <element label="Receipt Reference of Vendor" max_length="32" name="u_rcllinevendor" reference="proc_rec_slip_item" type="reference"/>
         <element label="Stock" max_length="32" name="u_stock" reference="alm_stockroom" type="reference"/>
         <element choice="1" label="Type of movement" max_length="40" name="u_type_movement" type="choice">
             <choice>
@@ -43,9 +44,12 @@
             <element name="u_product_catalog"/>
         </index>
         <index name="index4">
-            <element name="u_stock"/>
+            <element name="u_rcllinevendor"/>
         </index>
         <index name="index5">
+            <element name="u_stock"/>
+        </index>
+        <index name="index6">
             <element name="u_vendor"/>
         </index>
     </element>
