@@ -27,6 +27,7 @@
         <element label="Quantity" max_length="40" name="u_quantity" type="integer"/>
         <element label="Receipt Reference of Vendor" max_length="32" name="u_rcllinevendor" reference="proc_rec_slip_item" type="reference"/>
         <element label="Stock" max_length="32" name="u_stock" reference="alm_stockroom" type="reference"/>
+        <element label="Transfer Order  Reference" max_length="32" name="u_tol" reference="alm_transfer_order_line" type="reference"/>
         <element choice="1" label="Type of movement" max_length="40" name="u_type_movement" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Entry" value="u_entry"/>
@@ -50,6 +51,9 @@
             <element name="u_stock"/>
         </index>
         <index name="index6">
+            <element name="u_tol"/>
+        </index>
+        <index name="index7">
             <element name="u_vendor"/>
         </index>
     </element>

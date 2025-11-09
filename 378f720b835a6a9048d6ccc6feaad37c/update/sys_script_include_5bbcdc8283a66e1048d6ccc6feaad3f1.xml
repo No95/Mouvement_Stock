@@ -5,7 +5,7 @@
         <api_name>x_606284_stock_mov.StockMovementUtils</api_name>
         <caller_access>1</caller_access>
         <client_callable>false</client_callable>
-        <description>utility for managing stock movements</description>
+        <description>Utilities for managing stock movements</description>
         <mobile_callable>false</mobile_callable>
         <name>StockMovementUtils</name>
         <sandbox_callable>false</sandbox_callable>
@@ -13,46 +13,104 @@
 StockMovementUtils.prototype = {
     initialize: function() {},
 
-    createRecMovementStock: function(pol, rsl, qty, type) {
-        var TYPE_MVT = 'u_entry';
-        var ORIGIN_RECEPT = 'u_supplier_reception';
-
+    createOutTOMovementStock: function(OutStock, qty, asset) {
+        var TYPE_MVT = 'u_exit';
+        var ORIGIN_MOVEMENT = 'u_stock_transfer';
+		var IdAsset = asset.sys_id;
 
         var mvtstk = new GlideRecord('x_606284_stock_mov_x_606284_movstock');
         mvtstk.initialize();
         mvtstk.u_type_movement = TYPE_MVT;
-        mvtstk.u_origin_movement = ORIGIN_RECEPT;
-        //rs.purchase_order = po.sys_id;
-        mvtstk.u_model = pol.model;
-        mvtstk.u_stock = rsl.receiving_slip.stockroom;
-        //mvtstk.insert();
+        mvtstk.u_origin_movement = ORIGIN_MOVEMENT;
+        mvtstk.u_model = asset.model;
+		mvtstk.u_vendor = asset.model.manufacturer;
+        mvtstk.u_stock = OutStock;
+		mvtstk.u_quantity = asset.quantity;
+		mvtstk.u_asset = asset.sys_id;
 
-        var po = new GlideRecord('proc_po');
-        po.get(pol.purchase_order);
-
-        var asset = new GlideRecord('alm_asset');
-        asset.addQuery('purchase_line', pol.sys_id);
-        asset.addQuery('receiving_line', rsl.sys_id);
-
-        asset.query();
-        gs.log("Création de mouvement de stock pour l'asset de type " + type, "StockMovementUtils");
-
-        while (qty > 0) {
-            if (asset.next()) {
-
-                if (type == 'hardware' || type == 'asset') {
-                    mvtstk.u_quantity = 1;
-                    qty--;
-                } else {
-                    mvtstk.u_quantity = qty;
-                    qty = 0;
-                }
-                mvtstk.u_asset = asset.sys_id;
-                gs.log("Le Sys ID de l'asset est le " + mvtstk.u_asset, "StockMovementUtils");
-                mvtstk.insert();
-
-            }
+		// Type d'asset
+		var AssetClass = asset.sys_class_name.toString();
+        switch (AssetClass) {
+            case 'alm_hardware':
+                mvtstk.u_assettype = "u_hardware";
+                break;
+            case 'alm_consumable':
+                mvtstk.u_assettype = "u_consumable";
+                break;
+            case 'alm_license':
+                mvtstk.u_assettype = "u_software";
+                break;
+            default:
+                mvtstk.u_assettype = "u_other";
         }
+		
+		// Tranfer Order Line for Transfer Order Line Task
+        var tolitem = new GlideRecord('alm_transfer_order_line');
+		tolitem.addQuery('asset.sys_id', IdAsset);
+        // tolitem.addQuery('stage', 'in_transit');
+        tolitem.query();
+        if (tolitem.next()){
+			mvtstk.u_tol = tolitem.sys_id;
+            var toltask = new GlideRecord('alm_transfer_order_line_task');
+			toltask.addQuery('transfer_order_line',tolitem.sys_id);
+			toltask.addQuery('stage','in_transit');
+			toltask.addQuery('state','3');
+			toltask.query();
+			if(toltask.next()){
+				mvtstk.u_date_movement = toltask.closed_at;
+			}
+		}
+        mvtstk.insert();
+    },
+
+    createINTOMovementStock: function(INStock, qty, asset) {
+        var TYPE_MVT = 'u_entry';
+        var ORIGIN_MOVEMENT = 'u_stock_transfer';
+		var IdAsset = asset.sys_id;
+
+        var mvtstk = new GlideRecord('x_606284_stock_mov_x_606284_movstock');
+        mvtstk.initialize();
+        mvtstk.u_type_movement = TYPE_MVT;
+        mvtstk.u_origin_movement = ORIGIN_MOVEMENT;
+        mvtstk.u_model = asset.model;
+		mvtstk.u_vendor = asset.model.manufacturer;
+        mvtstk.u_stock = INStock;
+		mvtstk.u_quantity = asset.quantity;
+		mvtstk.u_asset = asset.sys_id;
+
+		// Type d'asset
+		var AssetClass = asset.sys_class_name.toString();
+        switch (AssetClass) {
+            case 'alm_hardware':
+                mvtstk.u_assettype = "u_hardware";
+                break;
+            case 'alm_consumable':
+                mvtstk.u_assettype = "u_consumable";
+                break;
+            case 'alm_license':
+                mvtstk.u_assettype = "u_software";
+                break;
+            default:
+                mvtstk.u_assettype = "u_other";
+        }
+		
+		// Tranfer Order Line for Transfer Order Line Task
+        var tolitem = new GlideRecord('alm_transfer_order_line');
+		tolitem.addQuery('asset.sys_id', IdAsset);
+        // tolitem.addQuery('stage', 'in_transit');
+        tolitem.query();
+        if (tolitem.next()){
+			mvtstk.u_tol = tolitem.sys_id;
+            var toltask = new GlideRecord('alm_transfer_order_line_task');
+			toltask.addQuery('transfer_order_line',tolitem.sys_id);
+			toltask.addQuery('stage','received');
+			//toltask.addQuery('state','3');
+			toltask.query();
+			if(toltask.next()){
+				mvtstk.u_date_movement = toltask.closed_at;
+			}
+		}
+        mvtstk.insert();
     },
 
     createRecVendorMovementStock: function(pol, rsl, asset) {
@@ -167,13 +225,13 @@ StockMovementUtils.prototype = {
         <sys_created_by>BL62F3EN</sys_created_by>
         <sys_created_on>2025-07-06 10:42:10</sys_created_on>
         <sys_id>5bbcdc8283a66e1048d6ccc6feaad3f1</sys_id>
-        <sys_mod_count>22</sys_mod_count>
+        <sys_mod_count>33</sys_mod_count>
         <sys_name>StockMovementUtils</sys_name>
         <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
         <sys_policy>read</sys_policy>
         <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
         <sys_update_name>sys_script_include_5bbcdc8283a66e1048d6ccc6feaad3f1</sys_update_name>
         <sys_updated_by>BL62F3EN</sys_updated_by>
-        <sys_updated_on>2025-11-06 14:49:47</sys_updated_on>
+        <sys_updated_on>2025-11-09 10:44:52</sys_updated_on>
     </sys_script_include>
 </record_update>
