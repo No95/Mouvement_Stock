@@ -58,7 +58,7 @@
             <element>u_origin_movement</element>
             <hint/>
             <inactive>false</inactive>
-            <label>Loss</label>
+            <label>Lost</label>
             <language>en</language>
             <name>x_606284_stock_mov_x_606284_movstock</name>
             <sequence>30</sequence>
@@ -67,10 +67,10 @@
             <sys_created_on>2025-06-27 15:44:54</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>3</sys_mod_count>
+            <sys_mod_count>4</sys_mod_count>
             <sys_updated_by>BL62F3EN</sys_updated_by>
-            <sys_updated_on>2025-06-27 15:45:21</sys_updated_on>
-            <value>u_loss</value>
+            <sys_updated_on>2025-11-26 09:08:06</sys_updated_on>
+            <value>u_lost</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
             <dependent_value/>
@@ -147,6 +147,63 @@
             <sys_updated_by>BL62F3EN</sys_updated_by>
             <sys_updated_on>2025-06-27 15:51:11</sys_updated_on>
             <value>u_reprise</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_origin_movement</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>RMA</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_x_606284_movstock</name>
+            <sequence>80</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-11-26 08:18:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>1</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-11-26 08:19:09</sys_updated_on>
+            <value>u_rma</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_origin_movement</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Inventory</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_x_606284_movstock</name>
+            <sequence>85</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-11-26 09:40:50</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-11-26 09:41:15</sys_updated_on>
+            <value>u_inventory</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_origin_movement</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Other</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_x_606284_movstock</name>
+            <sequence>90</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-11-26 08:38:25</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>2</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-11-26 08:38:52</sys_updated_on>
+            <value>u_other</value>
         </sys_choice>
     </sys_choice>
 </record_update>

@@ -32,13 +32,30 @@
         <script><![CDATA[(function executeRule(current, previous /*null when async*/ ) {
 
     // Manage Out of Stock by Transfer Order Phase Transit
-    if(previous.install_status == '6' && current.install_status == '9'){
-		(new StockMovementUtils()).createOutTOMovementStock(previous.stockroom, current.quantity,current);
+    if (previous.install_status == '6' && current.install_status == '9') {
+        var TYPE_MVT = 'u_exit';
+        (new StockMovementUtils()).createInOutTOMovementStock(TYPE_MVT, previous.stockroom, current.quantity, current);
     };
 
-	// Manage Entry in Stock by Tranfer Order Phase Received 
-	if (previous.install_status == '9' && current.install_status == '6') {
-        (new StockMovementUtils()).createINTOMovementStock(current.stockroom, current.quantity, current);
+    // Manage Entry in Stock by Tranfer Order Phase Received 
+    if (previous.install_status == '9' && current.install_status == '6') {
+        TYPE_MVT = 'u_entry';
+        (new StockMovementUtils()).createInOutTOMovementStock(TYPE_MVT, current.stockroom, current.quantity, current);
+    };
+
+    // Manage Out of Stock by Manual Action
+    if (previous.install_status == '6' && current.install_status != '9') {
+        TYPE_MVT = 'u_exit';
+        (new StockMovementUtils()).createOutMovementStock(TYPE_MVT, previous.stockroom, current.quantity, current);
+    };
+
+    // Manage In of Stock by Manual Action
+    // Exclude Create Asset by Receipt Vendor
+    if (current.acquisition_method != 'purchase' || current.operation() != 'insert') {
+        if (previous.install_status != '9' && current.install_status == '6') {
+            TYPE_MVT = 'u_entry';
+            (new StockMovementUtils()).createINMovementStock(TYPE_MVT, current.stockroom, current.quantity, current, previous.install_status);
+        }
     };
 
 })(current, previous);]]></script>
@@ -48,7 +65,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>993476f5834d721048d6ccc6feaad39e</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>17</sys_mod_count>
         <sys_name>Manage Stock Flows</sys_name>
         <sys_overrides/>
         <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
@@ -56,7 +73,7 @@
         <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
         <sys_update_name>sys_script_993476f5834d721048d6ccc6feaad39e</sys_update_name>
         <sys_updated_by>BL62F3EN</sys_updated_by>
-        <sys_updated_on>2025-11-09 10:38:20</sys_updated_on>
+        <sys_updated_on>2025-11-28 18:35:56</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

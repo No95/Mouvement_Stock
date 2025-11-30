@@ -16,11 +16,14 @@
             <choice>
                 <element inactive_on_update="false" label="Supplier reception" sequence="10" value="u_supplier_reception"/>
                 <element inactive_on_update="false" label="Stock transfer" sequence="20" value="u_stock_transfer"/>
-                <element inactive_on_update="false" label="Loss" sequence="30" value="u_loss"/>
+                <element inactive_on_update="false" label="Lost" sequence="30" value="u_lost"/>
                 <element inactive_on_update="false" label="Supplier return" sequence="40" value="u_supplier_return"/>
                 <element inactive_on_update="false" label="Installation" sequence="50" value="u_installation"/>
                 <element inactive_on_update="false" label="Stolen" sequence="60" value="u_stolen"/>
                 <element inactive_on_update="false" label="Reprise" sequence="70" value="u_reprise"/>
+                <element inactive_on_update="false" label="RMA" sequence="80" value="u_rma"/>
+                <element inactive_on_update="false" label="Inventory" sequence="85" value="u_inventory"/>
+                <element inactive_on_update="false" label="Other" sequence="90" value="u_other"/>
             </choice>
         </element>
         <element label="Product Catalog" max_length="32" name="u_product_catalog" reference="sc_cat_item" type="reference"/>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="INSERT_OR_UPDATE">
+        <before>false</before>
+        <description>Suppression des Flow créés dans l'application "Stock Movement"</description>
+        <name>BLI Delete Flow Application Stock Moveme</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[gs.info("*********************************");
+gs.info("Processing flow Delete");
+gs.info("*********************************");
+
+var FlowBLI = new GlideRecord('sys_hub_flow');
+FlowBLI.addEncodedQuery('sys_idSTARTSWITH55fc428c830f2e9048d6ccc6feaad351');
+FlowBLI.query();
+	if (FlowBLI.next()) {
+		var BLIScope = FlowBLI.sys_scope;
+		gs.print("Scope: " + BLIScope);
+		FlowBLI.deleteRecord();
+	}
+]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-11-30 09:30:45</sys_created_on>
+        <sys_id>507dc5dd83a1321048d6ccc6feaad308</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>BLI Delete Flow Application Stock Moveme</sys_name>
+        <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
+        <sys_update_name>sys_script_fix_507dc5dd83a1321048d6ccc6feaad308</sys_update_name>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-11-30 16:29:02</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+</record_update>
