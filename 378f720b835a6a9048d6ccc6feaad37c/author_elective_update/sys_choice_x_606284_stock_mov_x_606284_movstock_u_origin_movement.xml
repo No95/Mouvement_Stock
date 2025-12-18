@@ -16,7 +16,7 @@
             <sys_updated_on>2025-06-27 15:36:31</sys_updated_on>
         </sys_choice_set>
         <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
+            <dependent_value>u_entry</dependent_value>
             <element>u_origin_movement</element>
             <hint/>
             <inactive>false</inactive>
@@ -29,13 +29,32 @@
             <sys_created_on>2025-06-27 15:36:31</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>3</sys_mod_count>
+            <sys_mod_count>5</sys_mod_count>
             <sys_updated_by>BL62F3EN</sys_updated_by>
-            <sys_updated_on>2025-06-27 15:39:40</sys_updated_on>
+            <sys_updated_on>2025-12-15 10:49:11</sys_updated_on>
             <value>u_supplier_reception</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
+            <dependent_value>u_entry</dependent_value>
+            <element>u_origin_movement</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Stock transfer</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_x_606284_movstock</name>
+            <sequence>20</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-12-15 10:50:06</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-12-15 10:50:06</sys_updated_on>
+            <value>u_stock_transfer</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>u_exit</dependent_value>
             <element>u_origin_movement</element>
             <hint/>
             <inactive>false</inactive>
@@ -48,13 +67,13 @@
             <sys_created_on>2025-06-27 15:39:07</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>2</sys_mod_count>
+            <sys_mod_count>3</sys_mod_count>
             <sys_updated_by>BL62F3EN</sys_updated_by>
-            <sys_updated_on>2025-06-27 15:39:27</sys_updated_on>
+            <sys_updated_on>2025-12-15 10:33:17</sys_updated_on>
             <value>u_stock_transfer</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
+            <dependent_value>u_exit</dependent_value>
             <element>u_origin_movement</element>
             <hint/>
             <inactive>false</inactive>
@@ -67,13 +86,13 @@
             <sys_created_on>2025-06-27 15:44:54</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>4</sys_mod_count>
+            <sys_mod_count>5</sys_mod_count>
             <sys_updated_by>BL62F3EN</sys_updated_by>
-            <sys_updated_on>2025-11-26 09:08:06</sys_updated_on>
+            <sys_updated_on>2025-12-15 10:32:26</sys_updated_on>
             <value>u_lost</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
+            <dependent_value>u_exit</dependent_value>
             <element>u_origin_movement</element>
             <hint/>
             <inactive>false</inactive>
@@ -86,13 +105,32 @@
             <sys_created_on>2025-06-27 15:46:12</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>2</sys_mod_count>
+            <sys_mod_count>3</sys_mod_count>
             <sys_updated_by>BL62F3EN</sys_updated_by>
-            <sys_updated_on>2025-06-27 15:46:35</sys_updated_on>
+            <sys_updated_on>2025-12-15 10:44:39</sys_updated_on>
             <value>u_supplier_return</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
+            <dependent_value>u_entry</dependent_value>
+            <element>u_origin_movement</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Supplier return</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_x_606284_movstock</name>
+            <sequence>40</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-12-15 10:45:18</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-12-15 10:45:18</sys_updated_on>
+            <value>u_supplier_return</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>u_exit</dependent_value>
             <element>u_origin_movement</element>
             <hint/>
             <inactive>false</inactive>
@@ -105,13 +143,13 @@
             <sys_created_on>2025-06-27 15:47:54</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>2</sys_mod_count>
+            <sys_mod_count>3</sys_mod_count>
             <sys_updated_by>BL62F3EN</sys_updated_by>
-            <sys_updated_on>2025-06-27 15:48:08</sys_updated_on>
+            <sys_updated_on>2025-12-15 10:32:11</sys_updated_on>
             <value>u_installation</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
+            <dependent_value>u_exit</dependent_value>
             <element>u_origin_movement</element>
             <hint/>
             <inactive>false</inactive>
@@ -124,13 +162,13 @@
             <sys_created_on>2025-06-27 15:48:47</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>2</sys_mod_count>
+            <sys_mod_count>4</sys_mod_count>
             <sys_updated_by>BL62F3EN</sys_updated_by>
-            <sys_updated_on>2025-06-27 15:49:01</sys_updated_on>
+            <sys_updated_on>2025-12-15 10:50:57</sys_updated_on>
             <value>u_stolen</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
+            <dependent_value>u_entry</dependent_value>
             <element>u_origin_movement</element>
             <hint/>
             <inactive>false</inactive>
@@ -143,13 +181,13 @@
             <sys_created_on>2025-06-27 15:50:57</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>2</sys_mod_count>
+            <sys_mod_count>3</sys_mod_count>
             <sys_updated_by>BL62F3EN</sys_updated_by>
-            <sys_updated_on>2025-06-27 15:51:11</sys_updated_on>
+            <sys_updated_on>2025-12-15 10:32:44</sys_updated_on>
             <value>u_reprise</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
+            <dependent_value>u_entry</dependent_value>
             <element>u_origin_movement</element>
             <hint/>
             <inactive>false</inactive>
@@ -162,13 +200,32 @@
             <sys_created_on>2025-11-26 08:18:18</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>1</sys_mod_count>
+            <sys_mod_count>2</sys_mod_count>
             <sys_updated_by>BL62F3EN</sys_updated_by>
-            <sys_updated_on>2025-11-26 08:19:09</sys_updated_on>
+            <sys_updated_on>2025-12-15 10:51:17</sys_updated_on>
             <value>u_rma</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
+            <dependent_value>u_exit</dependent_value>
+            <element>u_origin_movement</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>RMA</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_x_606284_movstock</name>
+            <sequence>80</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-12-15 10:51:45</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-12-15 10:51:45</sys_updated_on>
+            <value>u_rma</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>u_entry</dependent_value>
             <element>u_origin_movement</element>
             <hint/>
             <inactive>false</inactive>
@@ -181,13 +238,32 @@
             <sys_created_on>2025-11-26 09:40:50</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>2</sys_mod_count>
+            <sys_mod_count>3</sys_mod_count>
             <sys_updated_by>BL62F3EN</sys_updated_by>
-            <sys_updated_on>2025-11-26 09:41:15</sys_updated_on>
+            <sys_updated_on>2025-12-15 10:52:12</sys_updated_on>
             <value>u_inventory</value>
         </sys_choice>
         <sys_choice action="INSERT_OR_UPDATE">
-            <dependent_value/>
+            <dependent_value>u_exit</dependent_value>
+            <element>u_origin_movement</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Inventory</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_x_606284_movstock</name>
+            <sequence>85</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-12-15 10:52:26</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-12-15 10:52:26</sys_updated_on>
+            <value>u_inventory</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>u_entry</dependent_value>
             <element>u_origin_movement</element>
             <hint/>
             <inactive>false</inactive>
@@ -200,9 +276,28 @@
             <sys_created_on>2025-11-26 08:38:25</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_mod_count>2</sys_mod_count>
+            <sys_mod_count>3</sys_mod_count>
             <sys_updated_by>BL62F3EN</sys_updated_by>
-            <sys_updated_on>2025-11-26 08:38:52</sys_updated_on>
+            <sys_updated_on>2025-12-15 10:53:11</sys_updated_on>
+            <value>u_other</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value>u_exit</dependent_value>
+            <element>u_origin_movement</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Other</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_x_606284_movstock</name>
+            <sequence>90</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-12-15 10:53:24</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-12-15 10:53:24</sys_updated_on>
             <value>u_other</value>
         </sys_choice>
     </sys_choice>

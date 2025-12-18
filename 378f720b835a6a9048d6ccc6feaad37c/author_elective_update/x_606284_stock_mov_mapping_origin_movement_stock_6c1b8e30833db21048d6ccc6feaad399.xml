@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_606284_stock_mov_mapping_origin_movement_stock">
+    <x_606284_stock_mov_mapping_origin_movement_stock action="DELETE">
+        <active>true</active>
+        <install_status>7</install_status>
+        <number>MAPMVTSTK0001037</number>
+        <order>100</order>
+        <substatus>rma</substatus>
+        <sys_class_name>x_606284_stock_mov_mapping_origin_movement_stock</sys_class_name>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-12-11 10:54:22</sys_created_on>
+        <sys_id>6c1b8e30833db21048d6ccc6feaad399</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>100</sys_name>
+        <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
+        <sys_update_name>x_606284_stock_mov_mapping_origin_movement_stock_6c1b8e30833db21048d6ccc6feaad399</sys_update_name>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-12-11 10:54:22</sys_updated_on>
+        <u_ootb>false</u_ootb>
+        <u_origin_movement>u_rma</u_origin_movement>
+        <u_type_movement>u_exit</u_type_movement>
+    </x_606284_stock_mov_mapping_origin_movement_stock>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</application>
+        <file_path/>
+        <instance_id>00b74a6cdb5ab958ebdd2a59139619fc</instance_id>
+        <instance_name>dev200011</instance_name>
+        <name>x_606284_stock_mov_mapping_origin_movement_stock_6c1b8e30833db21048d6ccc6feaad399</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="x_606284_stock_mov_mapping_origin_movement_stock"><x_606284_stock_mov_mapping_origin_movement_stock action="INSERT_OR_UPDATE"><active>true</active><install_status>7</install_status><number>MAPMVTSTK0001037</number><order>100</order><substatus>rma</substatus><sys_class_name>x_606284_stock_mov_mapping_origin_movement_stock</sys_class_name><sys_created_by>BL62F3EN</sys_created_by><sys_created_on>2025-12-11 10:54:22</sys_created_on><sys_id>6c1b8e30833db21048d6ccc6feaad399</sys_id><sys_mod_count>0</sys_mod_count><sys_name>100</sys_name><sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package><sys_policy/><sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope><sys_update_name>x_606284_stock_mov_mapping_origin_movement_stock_6c1b8e30833db21048d6ccc6feaad399</sys_update_name><sys_updated_by>BL62F3EN</sys_updated_by><sys_updated_on>2025-12-11 10:54:22</sys_updated_on><u_ootb>false</u_ootb><u_origin_movement>u_rma</u_origin_movement><u_type_movement>u_exit</u_type_movement></x_606284_stock_mov_mapping_origin_movement_stock></record_update>]]></payload>
+        <payload_hash>-246440671</payload_hash>
+        <record_name>100</record_name>
+        <reverted_from/>
+        <source>3177896483f6aa5048d6ccc6feaad33a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-12-11 10:55:24</sys_created_on>
+        <sys_id>ff5b4270833db21048d6ccc6feaad39b</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19b0d0d26280000001</sys_recorded_at>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-12-11 10:55:24</sys_updated_on>
+        <type>Mapping Origin Movement Stock</type>
+        <update_guid>775b4270543db2106550cca8b77f669b</update_guid>
+        <update_guid_history>775b4270543db2106550cca8b77f669b:-246440671</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="100">2b7c0e7c83f9b21048d6ccc6feaad32f</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-12-11 11:00:18</sys_created_on>
+        <sys_db_object display_value="" name="x_606284_stock_mov_mapping_origin_movement_stock">x_606284_stock_mov_mapping_origin_movement_stock</sys_db_object>
+        <sys_id>43520e0d90054bb0a8d0313e682f5ba4</sys_id>
+        <sys_metadata>6c1b8e30833db21048d6ccc6feaad399</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>100</sys_name>
+        <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
+        <sys_scope_delete display_value="">549ab75ca7654e0682d61ec9cd309f44</sys_scope_delete>
+        <sys_update_name>x_606284_stock_mov_mapping_origin_movement_stock_6c1b8e30833db21048d6ccc6feaad399</sys_update_name>
+        <sys_update_version display_value="x_606284_stock_mov_mapping_origin_movement_stock_6c1b8e30833db21048d6ccc6feaad399">ff5b4270833db21048d6ccc6feaad39b</sys_update_version>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-12-11 11:00:18</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

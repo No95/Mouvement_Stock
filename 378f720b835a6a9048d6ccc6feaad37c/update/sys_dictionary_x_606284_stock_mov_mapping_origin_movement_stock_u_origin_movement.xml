@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="u_origin_movement" table="x_606284_stock_mov_x_606284_movstock">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="u_origin_movement" table="x_606284_stock_mov_mapping_origin_movement_stock">
         <active>true</active>
         <array>false</array>
         <attributes/>
@@ -11,8 +11,8 @@
 
 })(current);]]></calculation>
         <choice>1</choice>
-        <choice_field/>
-        <choice_table/>
+        <choice_field>u_origin_movement</choice_field>
+        <choice_table>x_606284_stock_mov_x_606284_movstock</choice_table>
         <column_label>Origin of movement</column_label>
         <comments/>
         <create_roles/>
@@ -33,9 +33,9 @@
         <function_definition/>
         <function_field>false</function_field>
         <internal_type display_value="Choice">choice</internal_type>
-        <mandatory>false</mandatory>
+        <mandatory>true</mandatory>
         <max_length>40</max_length>
-        <name>x_606284_stock_mov_x_606284_movstock</name>
+        <name>x_606284_stock_mov_mapping_origin_movement_stock</name>
         <next_element/>
         <primary>false</primary>
         <read_only>false</read_only>
@@ -51,14 +51,14 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>BL62F3EN</sys_created_by>
-        <sys_created_on>2025-06-27 15:35:40</sys_created_on>
+        <sys_created_on>2025-12-02 11:12:12</sys_created_on>
         <sys_name>Origin of movement</sys_name>
         <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
         <sys_policy/>
         <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
-        <sys_update_name>sys_dictionary_x_606284_stock_mov_x_606284_movstock_u_origin_movement</sys_update_name>
+        <sys_update_name>sys_dictionary_x_606284_stock_mov_mapping_origin_movement_stock_u_origin_movement</sys_update_name>
         <sys_updated_by>BL62F3EN</sys_updated_by>
-        <sys_updated_on>2025-12-15 10:33:50</sys_updated_on>
+        <sys_updated_on>2025-12-15 11:27:28</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>

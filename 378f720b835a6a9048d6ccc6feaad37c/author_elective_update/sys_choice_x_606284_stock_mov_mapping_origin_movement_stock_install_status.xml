@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="install_status" table="x_606284_stock_mov_mapping_origin_movement_stock" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>install_status</element>
+            <name>x_606284_stock_mov_mapping_origin_movement_stock</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-12-02 11:03:54</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>install_status</sys_name>
+            <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
+            <sys_update_name>sys_choice_x_606284_stock_mov_mapping_origin_movement_stock_install_status</sys_update_name>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-12-02 11:03:54</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>install_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>On order</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_mapping_origin_movement_stock</name>
+            <sequence>0</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-12-02 17:25:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-12-02 17:25:29</sys_updated_on>
+            <value>2</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>install_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>In stock</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_mapping_origin_movement_stock</name>
+            <sequence>1</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-12-02 17:25:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-12-02 17:25:29</sys_updated_on>
+            <value>6</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>install_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>In transit</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_mapping_origin_movement_stock</name>
+            <sequence>2</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-12-02 17:25:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-12-02 17:25:29</sys_updated_on>
+            <value>9</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>install_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>In use</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_mapping_origin_movement_stock</name>
+            <sequence>3</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-12-02 17:25:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-12-02 17:25:29</sys_updated_on>
+            <value>1</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>install_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Consumed</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_mapping_origin_movement_stock</name>
+            <sequence>4</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-12-02 17:25:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-12-02 17:25:29</sys_updated_on>
+            <value>10</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>install_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>In maintenance</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_mapping_origin_movement_stock</name>
+            <sequence>5</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-12-02 17:25:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-12-02 17:25:29</sys_updated_on>
+            <value>3</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>install_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Retired</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_mapping_origin_movement_stock</name>
+            <sequence>6</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-12-02 17:25:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-12-02 17:25:29</sys_updated_on>
+            <value>7</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>install_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Missing</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_mapping_origin_movement_stock</name>
+            <sequence>7</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-12-02 17:25:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-12-02 17:25:29</sys_updated_on>
+            <value>8</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>install_status</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Build</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_mapping_origin_movement_stock</name>
+            <sequence>8</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-12-02 17:25:29</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-12-02 17:25:29</sys_updated_on>
+            <value>11</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

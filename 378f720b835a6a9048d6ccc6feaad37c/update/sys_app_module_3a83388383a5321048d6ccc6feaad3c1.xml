@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <application display_value="stock movement">a3c08fc7835a6a9048d6ccc6feaad35f</application>
+        <assessment/>
+        <device_type/>
+        <filter table="sys_choice">name=x_606284_stock_mov_x_606284_movstock^element=u_origin_movement^EQ<item endquery="false" field="name" goto="false" newquery="false" operator="=" or="false" value="x_606284_stock_mov_x_606284_movstock"/>
+            <item endquery="false" field="element" goto="false" newquery="false" operator="=" or="false" value="u_origin_movement"/>
+            <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
+        </filter>
+        <hint>Manage Choice Lists Of Origin Movement</hint>
+        <homepage/>
+        <image/>
+        <link_type>LIST</link_type>
+        <map_page/>
+        <mobile_title>Parameter Choice Origin Movement</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>sys_choice</name>
+        <order>12</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query>sysparm_transaction_scope=x_606284_stock_mov</query>
+        <report/>
+        <require_confirmation>true</require_confirmation>
+        <roles>admin</roles>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-12-05 18:07:16</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>3a83388383a5321048d6ccc6feaad3c1</sys_id>
+        <sys_mod_count>7</sys_mod_count>
+        <sys_name>Parameter Choice Origin Movement</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
+        <sys_update_name>sys_app_module_3a83388383a5321048d6ccc6feaad3c1</sys_update_name>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-12-18 10:19:14</sys_updated_on>
+        <timeline_page/>
+        <title>Parameter Choice Origin Movement</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+</record_update>
