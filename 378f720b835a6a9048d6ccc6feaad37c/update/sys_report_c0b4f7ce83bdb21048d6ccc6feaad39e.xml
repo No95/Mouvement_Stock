@@ -80,7 +80,7 @@
         <pivot_expanded>true</pivot_expanded>
         <report_drilldown/>
         <report_source/>
-        <roles/>
+        <roles>x_606284_stock_mov.stock_movements_user,x_606284_stock_mov.stock_movements_admin</roles>
         <row/>
         <sc_groupby_item_id/>
         <sc_groupby_variable_id/>
@@ -108,14 +108,14 @@
         <sys_created_by>BL62F3EN</sys_created_by>
         <sys_created_on>2025-12-15 15:47:55</sys_created_on>
         <sys_id>c0b4f7ce83bdb21048d6ccc6feaad39e</sys_id>
-        <sys_mod_count>0</sys_mod_count>
+        <sys_mod_count>1</sys_mod_count>
         <sys_name>Statistic Movement Stock</sys_name>
         <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
         <sys_policy/>
         <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
         <sys_update_name>sys_report_c0b4f7ce83bdb21048d6ccc6feaad39e</sys_update_name>
         <sys_updated_by>BL62F3EN</sys_updated_by>
-        <sys_updated_on>2025-12-15 15:47:55</sys_updated_on>
+        <sys_updated_on>2025-12-18 10:56:26</sys_updated_on>
         <table>x_606284_stock_mov_x_606284_movstock</table>
         <title>Statistic Movement Stock</title>
         <title_horizontal_alignment>center</title_horizontal_alignment>
@@ -126,7 +126,7 @@
         <upper_limit/>
         <use_color_heatmap>false</use_color_heatmap>
         <use_null_in_trend>false</use_null_in_trend>
-        <user>f9fe3b2847200210ac8adbe4116d437a</user>
+        <user>GLOBAL</user>
         <x_axis_allow_decimals>true</x_axis_allow_decimals>
         <x_axis_display_grid>false</x_axis_display_grid>
         <x_axis_grid_color display_value="LightGrey">65b30308a9fe3dba01ebaa03e87e7cd3</x_axis_grid_color>
