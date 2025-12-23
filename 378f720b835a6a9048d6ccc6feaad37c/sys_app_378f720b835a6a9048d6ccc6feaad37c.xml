@@ -15,7 +15,7 @@
         <license_model>none</license_model>
         <logo/>
         <menu/>
-        <name>stock movement</name>
+        <name>Stock Movement</name>
         <package_json/>
         <private>false</private>
         <restrict_table_access>false</restrict_table_access>
@@ -32,9 +32,9 @@
         <sys_created_by>BL62F3EN</sys_created_by>
         <sys_created_on>2025-06-27 14:49:58</sys_created_on>
         <sys_id>378f720b835a6a9048d6ccc6feaad37c</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>6</sys_mod_count>
         <sys_updated_by>BL62F3EN</sys_updated_by>
-        <sys_updated_on>2025-12-11 13:59:22</sys_updated_on>
+        <sys_updated_on>2025-12-23 09:24:06</sys_updated_on>
         <template/>
         <trackable>true</trackable>
         <uninstall_blocked>false</uninstall_blocked>

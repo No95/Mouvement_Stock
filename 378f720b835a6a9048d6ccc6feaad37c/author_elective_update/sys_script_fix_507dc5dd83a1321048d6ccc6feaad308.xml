@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_fix">
+    <sys_script_fix action="DELETE">
+        <before>false</before>
+        <description>Suppression des Flow créés dans l'application "Stock Movement"</description>
+        <name>BLI Delete Flow Application Stock Moveme</name>
+        <record_for_rollback>true</record_for_rollback>
+        <script><![CDATA[gs.info("*********************************");
+gs.info("Processing flow Delete");
+gs.info("*********************************");
+
+var FlowBLI = new GlideRecord('sys_hub_flow');
+FlowBLI.addEncodedQuery('sys_idSTARTSWITH55fc428c830f2e9048d6ccc6feaad351');
+FlowBLI.query();
+	if (FlowBLI.next()) {
+		var BLIScope = FlowBLI.sys_scope;
+		gs.print("Scope: " + BLIScope);
+		FlowBLI.deleteRecord();
+	}
+]]></script>
+        <sys_class_name>sys_script_fix</sys_class_name>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-11-30 09:30:45</sys_created_on>
+        <sys_id>507dc5dd83a1321048d6ccc6feaad308</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>BLI Delete Flow Application Stock Moveme</sys_name>
+        <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
+        <sys_update_name>sys_script_fix_507dc5dd83a1321048d6ccc6feaad308</sys_update_name>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-11-30 16:29:02</sys_updated_on>
+        <unloadable>false</unloadable>
+    </sys_script_fix>
+<sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="Stock Movement">378f720b835a6a9048d6ccc6feaad37c</application>
+        <file_path/>
+        <instance_id>00b74a6cdb5ab958ebdd2a59139619fc</instance_id>
+        <instance_name>dev200011</instance_name>
+        <name>sys_script_fix_507dc5dd83a1321048d6ccc6feaad308</name>
+        <payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="sys_script_fix"&gt;
+    &lt;sys_script_fix action="INSERT_OR_UPDATE"&gt;
+        &lt;before&gt;false&lt;/before&gt;
+        &lt;description&gt;Suppression des Flow créés dans l'application "Stock Movement"&lt;/description&gt;
+        &lt;name&gt;BLI Delete Flow Application Stock Moveme&lt;/name&gt;
+        &lt;record_for_rollback&gt;true&lt;/record_for_rollback&gt;
+        &lt;script&gt;&lt;![CDATA[gs.info("*********************************");
+gs.info("Processing flow Delete");
+gs.info("*********************************");
+
+var FlowBLI = new GlideRecord('sys_hub_flow');
+FlowBLI.addEncodedQuery('sys_idSTARTSWITH55fc428c830f2e9048d6ccc6feaad351');
+FlowBLI.query();
+	if (FlowBLI.next()) {
+		var BLIScope = FlowBLI.sys_scope;
+		gs.print("Scope: " + BLIScope);
+		FlowBLI.deleteRecord();
+	}
+]]&gt;&lt;/script&gt;
+        &lt;sys_class_name&gt;sys_script_fix&lt;/sys_class_name&gt;
+        &lt;sys_created_by&gt;BL62F3EN&lt;/sys_created_by&gt;
+        &lt;sys_created_on&gt;2025-11-30 09:30:45&lt;/sys_created_on&gt;
+        &lt;sys_id&gt;507dc5dd83a1321048d6ccc6feaad308&lt;/sys_id&gt;
+        &lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;
+        &lt;sys_name&gt;BLI Delete Flow Application Stock Moveme&lt;/sys_name&gt;
+        &lt;sys_package display_value="stock movement" source="x_606284_stock_mov"&gt;378f720b835a6a9048d6ccc6feaad37c&lt;/sys_package&gt;
+        &lt;sys_policy/&gt;
+        &lt;sys_scope display_value="stock movement"&gt;378f720b835a6a9048d6ccc6feaad37c&lt;/sys_scope&gt;
+        &lt;sys_update_name&gt;sys_script_fix_507dc5dd83a1321048d6ccc6feaad308&lt;/sys_update_name&gt;
+        &lt;sys_updated_by&gt;BL62F3EN&lt;/sys_updated_by&gt;
+        &lt;sys_updated_on&gt;2025-11-30 16:29:02&lt;/sys_updated_on&gt;
+        &lt;unloadable&gt;false&lt;/unloadable&gt;
+    &lt;/sys_script_fix&gt;
+&lt;/record_update&gt;</payload>
+        <payload_hash>944611283</payload_hash>
+        <record_name>BLI Delete Flow Application Stock Moveme</record_name>
+        <reverted_from/>
+        <source>a75a068f83f1721048d6ccc6feaad36e</source>
+        <source_table>sys_upgrade_history</source_table>
+        <state>previous</state>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-12-18 10:37:28</sys_created_on>
+        <sys_id>256ac68f83f1721048d6ccc6feaad307</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19b310940f90000001</sys_recorded_at>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-12-18 10:37:28</sys_updated_on>
+        <type>Fix Script</type>
+        <update_guid>ed6ac68fedf172102ed91a70871e9906</update_guid>
+        <update_guid_history>ed6ac68fedf172102ed91a70871e9906:0,943a0a4ff4f17210f1346d52a0acbd89:1706503241,bf3eaa55a3e93210fa375e4fe675fdce:944941269,934daa1511e93210aed85df91c015449:765173839,b48ec51134e13210b1ad7f10d5363557:-2122948246</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete/>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-12-23 09:21:50</sys_created_on>
+        <sys_db_object display_value="" name="sys_script_fix">sys_script_fix</sys_db_object>
+        <sys_id>0363a834d4504e59a9f744a343183cf9</sys_id>
+        <sys_metadata>507dc5dd83a1321048d6ccc6feaad308</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>BLI Delete Flow Application Stock Moveme</sys_name>
+        <sys_package display_value="Stock Movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="Stock Movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
+        <sys_scope_delete display_value="">549ab75ca7654e0682d61ec9cd309f44</sys_scope_delete>
+        <sys_update_name>sys_script_fix_507dc5dd83a1321048d6ccc6feaad308</sys_update_name>
+        <sys_update_version display_value="sys_script_fix_507dc5dd83a1321048d6ccc6feaad308">256ac68f83f1721048d6ccc6feaad307</sys_update_version>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-12-23 09:21:50</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>
