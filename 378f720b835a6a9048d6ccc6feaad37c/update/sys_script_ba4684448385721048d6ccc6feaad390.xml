@@ -29,8 +29,7 @@
         <role_conditions/>
         <script><![CDATA[(function executeRule(current, previous /*null when async*/) {
 
-	// Add your code here
-	// gs.log("Appel du programme StockMovementtUtils","Create Movement Stock");
+
 	try{
 		if (current.acquisition_method =='purchase'){	
 			(new StockMovementUtils()).createRecVendorMovementStock(current.purchase_line, current.receiving_line, current);
@@ -48,7 +47,7 @@
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ba4684448385721048d6ccc6feaad390</sys_id>
-        <sys_mod_count>4</sys_mod_count>
+        <sys_mod_count>5</sys_mod_count>
         <sys_name>Create Movement Stock</sys_name>
         <sys_overrides/>
         <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
@@ -56,7 +55,7 @@
         <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
         <sys_update_name>sys_script_ba4684448385721048d6ccc6feaad390</sys_update_name>
         <sys_updated_by>BL62F3EN</sys_updated_by>
-        <sys_updated_on>2025-11-02 16:29:59</sys_updated_on>
+        <sys_updated_on>2025-11-27 09:50:56</sys_updated_on>
         <template/>
         <when>after</when>
     </sys_script>

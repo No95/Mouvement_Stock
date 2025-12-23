@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element attributes="update_synch=true" db_object_id="d8b3737583a5321048d6ccc6feaad399" extends="dl_matcher" label="Mapping Origin Movement Stock" max_length="40" name="x_606284_stock_mov_mapping_origin_movement_stock" type="collection">
+        <element choice="1" choice_field="install_status" choice_table="alm_asset" hint="If the type of movement is a stock withdrawal, the value to be entered for the asset status is the one that positions it out of stock; otherwise, it corresponds to the initial values ​​of the asset before it entered stock." label="State" mandatory="true" max_length="40" name="install_status" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="On order" sequence="0" value="2"/>
+                <element inactive_on_update="false" label="In stock" sequence="1" value="6"/>
+                <element inactive_on_update="false" label="In transit" sequence="2" value="9"/>
+                <element inactive_on_update="false" label="In use" sequence="3" value="1"/>
+                <element inactive_on_update="false" label="Consumed" sequence="4" value="10"/>
+                <element inactive_on_update="false" label="In maintenance" sequence="5" value="3"/>
+                <element inactive_on_update="false" label="Retired" sequence="6" value="7"/>
+                <element inactive_on_update="false" label="Missing" sequence="7" value="8"/>
+                <element inactive_on_update="false" label="Build" sequence="8" value="11"/>
+            </choice>
+        </element>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="1" choice_field="substatus" choice_table="alm_asset" dependent="install_status" dependent_on_field="install_status" hint="If the type of movement is a stock withdrawal, the value to be entered for the sub-status of the asset is the one that positions it out of stock; otherwise, it corresponds to the initial values ​​of the asset before its entry into stock." label="Substate" max_length="40" name="substatus" type="choice" use_dependent_field="true">
+            <choice>
+                <element inactive_on_update="false" label="Available" sequence="0" value="available"/>
+                <element inactive_on_update="false" label="Disposed" sequence="1" value="disposed"/>
+                <element inactive_on_update="false" label="Lost" sequence="2" value="lost"/>
+                <element inactive_on_update="false" label="Pending fulfillment" sequence="3" value="pending_fulfillment"/>
+                <element inactive_on_update="false" label="Pending retirement" sequence="4" value="pending_retirement"/>
+                <element inactive_on_update="false" label="Reserved" sequence="5" value="reserved"/>
+                <element inactive_on_update="false" label="Sold" sequence="6" value="sold"/>
+                <element inactive_on_update="false" label="Stolen" sequence="7" value="stolen"/>
+                <element inactive_on_update="false" label="Defective" sequence="8" value="defective"/>
+                <element inactive_on_update="false" label="Donated" sequence="9" value="donated"/>
+                <element inactive_on_update="false" label="End of support" sequence="10" value="end_of_support"/>
+                <element inactive_on_update="false" label="Pending install" sequence="11" value="pending_install"/>
+                <element inactive_on_update="false" label="Pending repair" sequence="12" value="pending_repair"/>
+                <element inactive_on_update="false" label="Vendor credit" sequence="13" value="vendor_credit"/>
+                <element inactive_on_update="false" label="Pending disposal" sequence="14" value="pending_disposal"/>
+                <element inactive_on_update="false" label="Pending donation" sequence="15" value="pending_donation"/>
+                <element inactive_on_update="false" label="Pre-allocated" sequence="16" value="pre_allocated"/>
+                <element inactive_on_update="false" label="Pending transfer" sequence="17" value="pending_transfer"/>
+                <element inactive_on_update="false" label="Lease return" sequence="18" value="lease_return"/>
+                <element inactive_on_update="false" label="Pending evaluation" sequence="19" value="pending_evaluation"/>
+                <element inactive_on_update="false" label="Pending resale" sequence="20" value="pending_resale"/>
+                <element inactive_on_update="false" label="Obsolete" sequence="21" value="obsolete"/>
+                <element inactive_on_update="false" label="RMA" sequence="22" value="rma"/>
+                <element inactive_on_update="false" label="Buy out" sequence="23" value="buy_out"/>
+                <element inactive_on_update="false" label="On hold" sequence="24" value="on_hold"/>
+                <element inactive_on_update="false" label="Legal hold" sequence="25" value="legal_hold"/>
+                <element inactive_on_update="false" label="Quarantine" sequence="26" value="quarantine"/>
+                <element inactive_on_update="false" label="Pending return" sequence="27" value="pending_return"/>
+                <element inactive_on_update="false" label="Pending certificate" sequence="28" value="pending_certificate"/>
+                <element inactive_on_update="false" label="Test" sequence="29" value="test"/>
+            </choice>
+        </element>
+        <element label="Out of the Box" max_length="40" name="u_ootb" type="boolean"/>
+        <element choice="1" choice_field="u_origin_movement" choice_table="x_606284_stock_mov_x_606284_movstock" dependent="u_type_movement" dependent_on_field="u_type_movement" hint="Defines the action that best defines the movement of stock into or out." label="Origin of movement" mandatory="true" max_length="40" name="u_origin_movement" type="choice" use_dependent_field="true">
+            <choice>
+                <element inactive_on_update="false" label="Supplier reception" sequence="0" value="u_supplier_reception"/>
+                <element inactive_on_update="false" label="Reprise" sequence="1" value="u_reprise"/>
+                <element inactive_on_update="false" label="Stock transfer" sequence="1" value="u_stock_transfer"/>
+                <element inactive_on_update="false" label="Lost" sequence="2" value="u_lost"/>
+                <element hint="Retuen Asset to the Supplier" inactive_on_update="false" label="Supplier return" sequence="3" value="u_supplier_return"/>
+                <element inactive_on_update="false" label="Installation" sequence="4" value="u_installation"/>
+                <element inactive_on_update="false" label="Stolen" sequence="5" value="u_stolen"/>
+                <element inactive_on_update="false" label="RMA" sequence="7" value="u_rma"/>
+                <element inactive_on_update="false" label="Inventory" sequence="8" value="u_inventory"/>
+                <element inactive_on_update="false" label="Other" sequence="9" value="u_other"/>
+            </choice>
+        </element>
+        <element choice="1" choice_field="u_type_movement" choice_table="x_606284_stock_mov_x_606284_movstock" label="Type of movement" mandatory="true" max_length="40" name="u_type_movement" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Entry" sequence="0" value="u_entry"/>
+                <element inactive_on_update="false" label="Exit" sequence="1" value="u_exit"/>
+            </choice>
+        </element>
+    </element>
+</database>

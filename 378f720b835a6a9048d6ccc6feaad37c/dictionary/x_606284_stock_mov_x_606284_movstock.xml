@@ -12,21 +12,30 @@
         </element>
         <element label="Date of movement" max_length="40" name="u_date_movement" type="glide_date_time"/>
         <element label="Model" max_length="32" name="u_model" reference="cmdb_model" type="reference"/>
-        <element choice="1" label="Origin of movement" max_length="40" name="u_origin_movement" type="choice">
+        <element choice="1" dependent="u_type_movement" dependent_on_field="u_type_movement" label="Origin of movement" max_length="40" name="u_origin_movement" type="choice" use_dependent_field="true">
             <choice>
-                <element inactive_on_update="false" label="Supplier reception" sequence="10" value="u_supplier_reception"/>
-                <element inactive_on_update="false" label="Stock transfer" sequence="20" value="u_stock_transfer"/>
-                <element inactive_on_update="false" label="Loss" sequence="30" value="u_loss"/>
-                <element inactive_on_update="false" label="Supplier return" sequence="40" value="u_supplier_return"/>
-                <element inactive_on_update="false" label="Installation" sequence="50" value="u_installation"/>
-                <element inactive_on_update="false" label="Stolen" sequence="60" value="u_stolen"/>
-                <element inactive_on_update="false" label="Reprise" sequence="70" value="u_reprise"/>
+                <element dependent_value="u_entry" inactive_on_update="false" label="Supplier reception" sequence="10" value="u_supplier_reception"/>
+                <element dependent_value="u_entry" inactive_on_update="false" label="Stock transfer" sequence="20" value="u_stock_transfer"/>
+                <element dependent_value="u_exit" inactive_on_update="false" label="Stock transfer" sequence="20" value="u_stock_transfer"/>
+                <element dependent_value="u_exit" inactive_on_update="false" label="Lost" sequence="30" value="u_lost"/>
+                <element dependent_value="u_exit" inactive_on_update="false" label="Supplier return" sequence="40" value="u_supplier_return"/>
+                <element dependent_value="u_entry" inactive_on_update="false" label="Supplier return" sequence="40" value="u_supplier_return"/>
+                <element dependent_value="u_exit" inactive_on_update="false" label="Installation" sequence="50" value="u_installation"/>
+                <element dependent_value="u_exit" inactive_on_update="false" label="Stolen" sequence="60" value="u_stolen"/>
+                <element dependent_value="u_entry" inactive_on_update="false" label="Reprise" sequence="70" value="u_reprise"/>
+                <element dependent_value="u_entry" inactive_on_update="false" label="RMA" sequence="80" value="u_rma"/>
+                <element dependent_value="u_exit" inactive_on_update="false" label="RMA" sequence="80" value="u_rma"/>
+                <element dependent_value="u_entry" inactive_on_update="false" label="Inventory" sequence="85" value="u_inventory"/>
+                <element dependent_value="u_exit" inactive_on_update="false" label="Inventory" sequence="85" value="u_inventory"/>
+                <element dependent_value="u_entry" inactive_on_update="false" label="Other" sequence="90" value="u_other"/>
+                <element dependent_value="u_exit" inactive_on_update="false" label="Other" sequence="90" value="u_other"/>
             </choice>
         </element>
         <element label="Product Catalog" max_length="32" name="u_product_catalog" reference="sc_cat_item" type="reference"/>
         <element label="Quantity" max_length="40" name="u_quantity" type="integer"/>
         <element label="Receipt Reference of Vendor" max_length="32" name="u_rcllinevendor" reference="proc_rec_slip_item" type="reference"/>
         <element label="Stock" max_length="32" name="u_stock" reference="alm_stockroom" type="reference"/>
+        <element label="Transfer Order  Reference" max_length="32" name="u_tol" reference="alm_transfer_order_line" type="reference"/>
         <element choice="1" label="Type of movement" max_length="40" name="u_type_movement" type="choice">
             <choice>
                 <element inactive_on_update="false" label="Entry" value="u_entry"/>
@@ -50,6 +59,9 @@
             <element name="u_stock"/>
         </index>
         <index name="index6">
+            <element name="u_tol"/>
+        </index>
+        <index name="index7">
             <element name="u_vendor"/>
         </index>
     </element>

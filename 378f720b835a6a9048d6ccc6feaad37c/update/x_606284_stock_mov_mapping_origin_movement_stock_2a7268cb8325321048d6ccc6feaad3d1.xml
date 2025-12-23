@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="x_606284_stock_mov_mapping_origin_movement_stock">
+    <x_606284_stock_mov_mapping_origin_movement_stock action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <install_status>2</install_status>
+        <number>MAPMVTSTK0001005</number>
+        <order>110</order>
+        <substatus/>
+        <sys_class_name>x_606284_stock_mov_mapping_origin_movement_stock</sys_class_name>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-12-05 16:48:17</sys_created_on>
+        <sys_id>2a7268cb8325321048d6ccc6feaad3d1</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>110</sys_name>
+        <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
+        <sys_update_name>x_606284_stock_mov_mapping_origin_movement_stock_2a7268cb8325321048d6ccc6feaad3d1</sys_update_name>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-12-05 16:48:17</sys_updated_on>
+        <u_ootb>true</u_ootb>
+        <u_origin_movement>u_other</u_origin_movement>
+        <u_type_movement>u_exit</u_type_movement>
+    </x_606284_stock_mov_mapping_origin_movement_stock>
+</record_update>
