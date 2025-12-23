@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module">
+    <sys_app_module action="DELETE">
+        <active>false</active>
+        <application display_value="stock movement">a3c08fc7835a6a9048d6ccc6feaad35f</application>
+        <assessment/>
+        <device_type/>
+        <filter/>
+        <hint/>
+        <homepage/>
+        <image/>
+        <link_type>NEW</link_type>
+        <map_page/>
+        <mobile_title>Create New</mobile_title>
+        <mobile_view_name>Mobile</mobile_view_name>
+        <name>alm_asset</name>
+        <order>2</order>
+        <override_menu_roles>false</override_menu_roles>
+        <query/>
+        <report/>
+        <require_confirmation>true</require_confirmation>
+        <roles/>
+        <sys_class_name>sys_app_module</sys_class_name>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-06-27 14:55:25</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>73c0cb8b835a6a9048d6ccc6feaad398</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Create New</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
+        <sys_update_name>sys_app_module_73c0cb8b835a6a9048d6ccc6feaad398</sys_update_name>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-12-15 15:39:30</sys_updated_on>
+        <timeline_page/>
+        <title>Create New</title>
+        <uncancelable>false</uncancelable>
+        <view_name/>
+        <window_name/>
+    </sys_app_module>
+    <sys_update_version action="INSERT_OR_UPDATE">
+        <action>DELETE</action>
+        <application display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</application>
+        <file_path/>
+        <instance_id>00b74a6cdb5ab958ebdd2a59139619fc</instance_id>
+        <instance_name>dev200011</instance_name>
+        <name>sys_app_module_73c0cb8b835a6a9048d6ccc6feaad398</name>
+        <payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_module"><sys_app_module action="INSERT_OR_UPDATE"><active>false</active><application display_value="stock movement">a3c08fc7835a6a9048d6ccc6feaad35f</application><assessment/><device_type/><filter/><hint/><homepage/><image/><link_type>NEW</link_type><map_page/><mobile_title>Create New</mobile_title><mobile_view_name>Mobile</mobile_view_name><name>alm_asset</name><order>2</order><override_menu_roles>false</override_menu_roles><query/><report/><require_confirmation>true</require_confirmation><roles/><sys_class_name>sys_app_module</sys_class_name><sys_created_by>BL62F3EN</sys_created_by><sys_created_on>2025-06-27 14:55:25</sys_created_on><sys_domain>global</sys_domain><sys_domain_path>/</sys_domain_path><sys_id>73c0cb8b835a6a9048d6ccc6feaad398</sys_id><sys_mod_count>1</sys_mod_count><sys_name>Create New</sys_name><sys_overrides/><sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package><sys_policy/><sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope><sys_update_name>sys_app_module_73c0cb8b835a6a9048d6ccc6feaad398</sys_update_name><sys_updated_by>BL62F3EN</sys_updated_by><sys_updated_on>2025-12-15 15:39:30</sys_updated_on><timeline_page/><title>Create New</title><uncancelable>false</uncancelable><view_name/><window_name/></sys_app_module></record_update>]]></payload>
+        <payload_hash>-937083333</payload_hash>
+        <record_name>Create New</record_name>
+        <reverted_from/>
+        <source>3177896483f6aa5048d6ccc6feaad33a</source>
+        <source_table>sys_update_set</source_table>
+        <state>previous</state>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-12-15 15:39:30</sys_created_on>
+        <sys_id>20c2fb0e83bdb21048d6ccc6feaad30f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_recorded_at>19b22aab0ef0000001</sys_recorded_at>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-12-15 15:39:30</sys_updated_on>
+        <type>Module</type>
+        <update_guid>a4c2fb0e66bdb2101b65d20999ca8a0e</update_guid>
+        <update_guid_history>a4c2fb0e66bdb2101b65d20999ca8a0e:-937083333,f7c0cb8b6c5a6a904c015d9b51bd6299:1011231132</update_guid_history>
+    </sys_update_version>
+    <sys_metadata_delete action="INSERT_OR_UPDATE">
+        <sys_audit_delete display_value="Create New">31c7428b83f1721048d6ccc6feaad383</sys_audit_delete>
+        <sys_class_name>sys_metadata_delete</sys_class_name>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-12-18 10:26:01</sys_created_on>
+        <sys_db_object display_value="" name="sys_app_module">sys_app_module</sys_db_object>
+        <sys_id>014cd72d54694040800254c940f1e040</sys_id>
+        <sys_metadata>73c0cb8b835a6a9048d6ccc6feaad398</sys_metadata>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Create New</sys_name>
+        <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
+        <sys_parent/>
+        <sys_policy/>
+        <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
+        <sys_scope_delete display_value="">549ab75ca7654e0682d61ec9cd309f44</sys_scope_delete>
+        <sys_update_name>sys_app_module_73c0cb8b835a6a9048d6ccc6feaad398</sys_update_name>
+        <sys_update_version display_value="sys_app_module_73c0cb8b835a6a9048d6ccc6feaad398">20c2fb0e83bdb21048d6ccc6feaad30f</sys_update_version>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-12-18 10:26:01</sys_updated_on>
+    </sys_metadata_delete>
+</record_update>

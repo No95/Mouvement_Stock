@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update>
+    <sys_choice action="INSERT_OR_UPDATE" field="u_assettype" table="x_606284_stock_mov_x_606284_movstock" version="3">
+        <sys_choice_set action="INSERT_OR_UPDATE">
+            <element>u_assettype</element>
+            <name>x_606284_stock_mov_x_606284_movstock</name>
+            <sys_class_name>sys_choice_set</sys_class_name>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-11-02 08:41:47</sys_created_on>
+            <sys_mod_count>0</sys_mod_count>
+            <sys_name>u_assettype</sys_name>
+            <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
+            <sys_policy/>
+            <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
+            <sys_update_name>sys_choice_x_606284_stock_mov_x_606284_movstock_u_assettype</sys_update_name>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-11-02 08:41:47</sys_updated_on>
+        </sys_choice_set>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_assettype</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Hardware</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_x_606284_movstock</name>
+            <sequence>10</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-11-02 08:41:47</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-11-02 17:11:12</sys_updated_on>
+            <value>u_hardware</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_assettype</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Consumable</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_x_606284_movstock</name>
+            <sequence>20</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-11-02 08:42:56</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-11-02 09:07:16</sys_updated_on>
+            <value>u_consumable</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_assettype</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Software</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_x_606284_movstock</name>
+            <sequence>30</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-11-02 08:42:21</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>4</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-11-02 09:07:27</sys_updated_on>
+            <value>u_software</value>
+        </sys_choice>
+        <sys_choice action="INSERT_OR_UPDATE">
+            <dependent_value/>
+            <element>u_assettype</element>
+            <hint/>
+            <inactive>false</inactive>
+            <label>Other</label>
+            <language>en</language>
+            <name>x_606284_stock_mov_x_606284_movstock</name>
+            <sequence>50</sequence>
+            <synonyms/>
+            <sys_created_by>BL62F3EN</sys_created_by>
+            <sys_created_on>2025-11-02 08:43:41</sys_created_on>
+            <sys_domain>global</sys_domain>
+            <sys_domain_path>/</sys_domain_path>
+            <sys_mod_count>3</sys_mod_count>
+            <sys_updated_by>BL62F3EN</sys_updated_by>
+            <sys_updated_on>2025-11-02 09:07:37</sys_updated_on>
+            <value>u_other</value>
+        </sys_choice>
+    </sys_choice>
+</record_update>

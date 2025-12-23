@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>public</access>
+        <active>true</active>
+        <api_name>x_606284_stock_mov.StockMovementUtils</api_name>
+        <caller_access>1</caller_access>
+        <client_callable>false</client_callable>
+        <description>Utilities for managing stock movements</description>
+        <mobile_callable>false</mobile_callable>
+        <name>StockMovementUtils</name>
+        <sandbox_callable>false</sandbox_callable>
+        <script><![CDATA[var StockMovementUtils = Class.create();
+StockMovementUtils.prototype = {
+    initialize: function() {},
+
+ // Manage Input Output Asset in Stock throught Transfer Order. For Consumable only for receipt complete
+    createInOutTOMovementStock: function(TYPE_MVT, Stock, Qty, Asset) {
+        //var TYPE_MVT = 'u_exit';
+        var ORIGIN_MOVEMENT = 'u_stock_transfer';
+		var IdAsset = Asset.sys_id;
+		var QueryTask = '';
+
+        var mvtstk = new GlideRecord('x_606284_stock_mov_x_606284_movstock');
+        mvtstk.initialize();
+        mvtstk.u_type_movement = TYPE_MVT;
+        mvtstk.u_origin_movement = ORIGIN_MOVEMENT;
+        mvtstk.u_model = Asset.model;
+		mvtstk.u_vendor = Asset.model.manufacturer;
+        mvtstk.u_stock = Stock;
+		mvtstk.u_quantity = Asset.quantity;
+		mvtstk.u_asset = Asset.sys_id;
+
+		// Type d'asset
+		var AssetClass = Asset.sys_class_name.toString();
+        switch (AssetClass) {
+            case 'alm_hardware':
+                mvtstk.u_assettype = "u_hardware";
+                break;
+            case 'alm_consumable':
+                mvtstk.u_assettype = "u_consumable";
+                break;
+            case 'alm_license':
+                mvtstk.u_assettype = "u_software";
+                break;
+            default:
+                mvtstk.u_assettype = "u_other";
+        }
+		
+		// Tranfer Order Line for Transfer Order Line Task
+        var tolitem = new GlideRecord('alm_transfer_order_line');
+		tolitem.addQuery('asset.sys_id', IdAsset);
+        // tolitem.addQuery('stage', 'in_transit');
+        tolitem.query();
+        if (tolitem.next()){
+			mvtstk.u_tol = tolitem.sys_id;
+			if (TYPE_MVT == 'u_exit'){
+				QueryTask = 'transfer_order_line.sys_id=' + tolitem.sys_id + '^stage=in_transit^state=3';
+			}
+			else {
+				QueryTask = 'transfer_order_line.sys_id=' + tolitem.sys_id + '^stage=received';
+			}
+            var toltask = new GlideRecord('alm_transfer_order_line_task');
+			//toltask.addQuery('transfer_order_line',tolitem.sys_id);
+			//toltask.addQuery('stage','in_transit');
+			//toltask.addQuery('state','3');
+			toltask.addEncodedQuery(QueryTask);
+			toltask.query();
+			if(toltask.next()){
+				mvtstk.u_date_movement = toltask.closed_at;
+			}
+		}
+        mvtstk.insert();
+    },
+
+ // Manage Input Output Asset in Stock throught Transfer Order for partial receipt of Consumable.
+	createPartialRecConsumableMovementStock: function(INStock, tol, Qty) {
+        var TYPE_MVT = 'u_entry';
+        var ORIGIN_MOVEMENT = 'u_stock_transfer';
+		var IdAsset = tol.asset.sys_id;
+
+	// On s'assure que la quantité réceptionnée est > 0 pour créer un mouvement de Stock
+	if(Qty > 0) {
+        var mvtstk = new GlideRecord('x_606284_stock_mov_x_606284_movstock');
+        mvtstk.initialize();
+        mvtstk.u_type_movement = TYPE_MVT;
+        mvtstk.u_origin_movement = ORIGIN_MOVEMENT;
+        mvtstk.u_model = tol.model;
+		mvtstk.u_vendor = tol.asset.model.manufacturer;
+        mvtstk.u_stock = INStock;
+		mvtstk.u_quantity = Qty;
+		mvtstk.u_asset = IdAsset;
+		mvtstk.u_assettype = "u_consumable";
+		mvtstk.u_tol = tol.sys_id;
+		mvtstk.u_date_movement = tol.sys_updated_on;
+
+        mvtstk.insert();
+	}
+    },
+ 
+// Manage Output of Asset from Stock throught manual change Status or Stockroom
+    createOutMovementStock: function(TYPE_MVT,OutStock, qty, asset) {
+        
+        var QryMapOriginMvt = 'active=true^u_type_movement='+ TYPE_MVT +'^install_status=' + asset.install_status +'^substatus=' + asset.substatus;
+
+		var MapOriginMvt = new GlideRecord('x_606284_stock_mov_mapping_origin_movement_stock');
+
+		MapOriginMvt.addEncodedQuery(QryMapOriginMvt);
+		MapOriginMvt.query();
+		if (MapOriginMvt.next()) {
+				ORIGIN_MOVEMENT = MapOriginMvt.u_origin_movement;
+		} else {
+			QryMapOriginMvt = 'active=true^u_type_movement='+ TYPE_MVT +'^install_status=' + asset.install_status +'^substatus=';
+			MapOriginMvt = new GlideRecord('x_606284_stock_mov_mapping_origin_movement_stock');
+			
+			MapOriginMvt.addEncodedQuery(QryMapOriginMvt);
+			MapOriginMvt.query();
+			if (MapOriginMvt.next()) {
+				ORIGIN_MOVEMENT = MapOriginMvt.u_origin_movement;
+			} else {
+				QryMapOriginMvt = 'active=true^u_type_movement='+ TYPE_MVT+'^install_status=^substatus=';
+				MapOriginMvt = new GlideRecord('x_606284_stock_mov_mapping_origin_movement_stock');
+			
+				MapOriginMvt.addEncodedQuery(QryMapOriginMvt);
+				MapOriginMvt.query();
+				if (MapOriginMvt.next()) {
+					ORIGIN_MOVEMENT = MapOriginMvt.u_origin_movement;
+				}					
+			}		
+		}
+
+		// var NewState = asset.install_status.toString();
+		// switch(NewState) {
+		// 	case '2':    /* On order */
+		// 		ORIGIN_MOVEMENT = 'u_other';
+		// 		break;
+        //     case '1':    /* In Use */
+        //         ORIGIN_MOVEMENT = 'u_installation';
+        //         break;
+        //     case '10':    /* Consumed */
+        //         ORIGIN_MOVEMENT = 'u_installation';
+        //         break;	
+		// 	case '3':    /* In maintenance */
+        //         ORIGIN_MOVEMENT = 'u_rma';
+        //         break;	
+		// 	case '7':    /* Retired */
+		// 		if(asset.substatus == 'rma') {
+		// 			ORIGIN_MOVEMENT = 'u_rma';
+		// 		}
+		// 		else {
+        //         ORIGIN_MOVEMENT = 'u_reprise';
+		// 		}
+        //         break;
+		// 	case '8':    /* Missing */
+		// 		if(asset.substatus == 'lost') {
+		// 			ORIGIN_MOVEMENT = 'u_lost';
+		// 		}
+		// 		else {
+        //         ORIGIN_MOVEMENT = 'u_stolen';
+		// 		}
+        //         break;
+		// 	case '11':    /* Build */
+		// 		ORIGIN_MOVEMENT = 'u_other';
+		// 		break;	
+		// 	default:
+        //         ORIGIN_MOVEMENT = 'u_other';								
+		// } 
+		
+        var mvtstk = new GlideRecord('x_606284_stock_mov_x_606284_movstock');
+        mvtstk.initialize();
+        mvtstk.u_type_movement = TYPE_MVT;
+        mvtstk.u_origin_movement = ORIGIN_MOVEMENT;
+        mvtstk.u_model = asset.model;
+		mvtstk.u_vendor = asset.model.manufacturer;
+        mvtstk.u_stock = OutStock;
+		mvtstk.u_quantity = asset.quantity;
+		mvtstk.u_asset = asset.sys_id;
+		mvtstk.u_date_movement = asset.sys_updated_on;
+
+		// Type d'asset
+		var AssetClass = asset.sys_class_name.toString();
+        switch (AssetClass) {
+            case 'alm_hardware':
+                mvtstk.u_assettype = "u_hardware";
+                break;
+            case 'alm_consumable':
+                mvtstk.u_assettype = "u_consumable";
+                break;
+            case 'alm_license':
+                mvtstk.u_assettype = "u_software";
+                break;
+            default:
+                mvtstk.u_assettype = "u_other";
+        }
+		
+        mvtstk.insert();
+    },
+
+// Manage Input of Asset in Stock throught manual change Status or Stockroom
+    createINMovementStock: function(TYPE_MVT,INStock, qty, asset, PreviousState) {
+
+        var QryMapOriginMvt = 'active=true^u_type_movement='+ TYPE_MVT +'^install_status=' + PreviousState +'^substatus=' + asset.substatus;
+
+		var MapOriginMvt = new GlideRecord('x_606284_stock_mov_mapping_origin_movement_stock');
+
+		MapOriginMvt.addEncodedQuery(QryMapOriginMvt);
+		MapOriginMvt.query();
+		if (MapOriginMvt.next()) {
+				ORIGIN_MOVEMENT = MapOriginMvt.u_origin_movement;
+		} else {
+			QryMapOriginMvt = 'active=true^u_type_movement='+ TYPE_MVT +'^install_status=' + PreviousState +'^substatus=';
+			MapOriginMvt = new GlideRecord('x_606284_stock_mov_mapping_origin_movement_stock');
+
+			MapOriginMvt.addEncodedQuery(QryMapOriginMvt);
+			MapOriginMvt.query();
+			if (MapOriginMvt.next()) {
+				ORIGIN_MOVEMENT = MapOriginMvt.u_origin_movement;
+			} else {
+				QryMapOriginMvt = 'active=true^u_type_movement='+ TYPE_MVT+'^install_status=^substatus=';
+				MapOriginMvt = new GlideRecord('x_606284_stock_mov_mapping_origin_movement_stock');
+			
+				MapOriginMvt.addEncodedQuery(QryMapOriginMvt);
+				MapOriginMvt.query();
+				if (MapOriginMvt.next()) {
+					ORIGIN_MOVEMENT = MapOriginMvt.u_origin_movement;
+				}					
+			}		
+		}
+
+        // var OldState = PreviousState.toString();
+		// switch(OldState) {
+		// 	case '2':    /* On order */
+		// 		ORIGIN_MOVEMENT = 'u_supplier_receptionr';
+		// 		break;
+        //     case '1':    /* In Use */
+        //         ORIGIN_MOVEMENT = 'u_reprise';
+        //         break;
+        //     case '10':    /* Consumed */
+        //         ORIGIN_MOVEMENT = 'u_inventory';
+        //         break;	
+		// 	case '3':    /* In maintenance */
+        //         ORIGIN_MOVEMENT = 'u_rma';
+        //         break;	
+		// 	case '7':    /* Retired */
+		// 		if(asset.substatus == 'rma') {
+		// 			ORIGIN_MOVEMENT = 'u_rma';
+		// 		}
+		// 		else {
+        //         ORIGIN_MOVEMENT = 'u_inventory';
+		// 		}
+        //         break;
+		// 	case '8':    /* Missing */
+		// 		ORIGIN_MOVEMENT = 'u_inventory';
+        //         break;
+		// 	case '11':    /* Build */
+		// 		ORIGIN_MOVEMENT = 'u_other';
+		// 		break;		
+		// 	case '':    /* Création manuelle d'asset */
+        //         ORIGIN_MOVEMENT = 'u_inventory';
+        //         break;	
+		// 	default:
+        //         ORIGIN_MOVEMENT = 'u_other';							
+		// }
+
+        var mvtstk = new GlideRecord('x_606284_stock_mov_x_606284_movstock');
+        mvtstk.initialize();
+        mvtstk.u_type_movement = TYPE_MVT;
+        mvtstk.u_origin_movement = ORIGIN_MOVEMENT;
+        mvtstk.u_model = asset.model;
+		mvtstk.u_vendor = asset.model.manufacturer;
+        mvtstk.u_stock = INStock;
+		mvtstk.u_quantity = asset.quantity;
+		mvtstk.u_asset = asset.sys_id;
+		mvtstk.u_date_movement = asset.sys_updated_on;
+
+		// Type d'asset
+		var AssetClass = asset.sys_class_name.toString();
+        switch (AssetClass) {
+            case 'alm_hardware':
+                mvtstk.u_assettype = "u_hardware";
+                break;
+            case 'alm_consumable':
+                mvtstk.u_assettype = "u_consumable";
+                break;
+            case 'alm_license':
+                mvtstk.u_assettype = "u_software";
+                break;
+            default:
+                mvtstk.u_assettype = "u_other";
+        }
+		
+        mvtstk.insert();
+    },
+
+// Manage Input of Asset in Stock throught Vendor's Receipt 
+    createRecVendorMovementStock: function(pol, rsl, asset) {
+        var TYPE_MVT = 'u_entry';
+        var ORIGIN_RECEPT = 'u_supplier_reception';
+
+        var mvtstk = new GlideRecord('x_606284_stock_mov_x_606284_movstock');
+        mvtstk.initialize();
+
+        mvtstk.u_asset = asset.sys_id;
+
+        // Purchase Order Line for Product Catalog
+        var politem = new GlideRecord('proc_po_item');
+        politem.get(pol);
+
+        // Receiving Slip Line for Received Date
+        var rslitem = new GlideRecord('proc_rec_slip_item');
+        rslitem.get(rsl);
+
+        // Receiving Slip for Receiving Stock
+        var rcs = new GlideRecord('proc_rec_slip');
+        rcs.get(rslitem.receiving_slip);
+
+        mvtstk.u_type_movement = TYPE_MVT;
+        mvtstk.u_origin_movement = ORIGIN_RECEPT;
+        mvtstk.u_model = asset.model;
+        mvtstk.u_stock = rcs.stockroom;
+        mvtstk.u_date_movement = rslitem.received;
+        mvtstk.u_product_catalog = politem.product_catalog;
+		mvtstk.u_vendor = politem.vendor;
+		mvtstk.u_rcllinevendor = rsl.sys_id;
+
+		// Type d'asset
+		var AssetClass = asset.sys_class_name.toString();
+        switch (AssetClass) {
+            case 'alm_hardware':
+                mvtstk.u_assettype = "u_hardware";
+				mvtstk.u_quantity = asset.quantity;
+                break;
+            case 'alm_license':
+                mvtstk.u_assettype = "u_software";
+				mvtstk.u_quantity = asset.rights;
+                break;
+            case 'alm_consumable':
+                mvtstk.u_assettype = "u_consumable";
+                break;				
+            default:
+                mvtstk.u_assettype = "u_other";
+        }
+
+        mvtstk.insert();
+    },
+
+ // Manage Input of Consumable Asset in Stock throught Vendor's Receipt 
+	createRecConsumableMovementStock: function(pol, rs, qty, receivedate, rclid) {
+        var TYPE_MVT = 'u_entry';
+        var ORIGIN_RECEPT = 'u_supplier_reception';
+
+        var mvtstk = new GlideRecord('x_606284_stock_mov_x_606284_movstock');
+        mvtstk.initialize();
+
+        mvtstk.u_assettype = "u_consumable";
+
+        // Purchase Order Line for Product Catalog, Product Model and Vendor
+        var politem = new GlideRecord('proc_po_item');
+        politem.get(pol);
+
+        // Receiving Slip for Receiving Stock
+        var rcs = new GlideRecord('proc_rec_slip');
+        rcs.get(rs);
+
+        mvtstk.u_type_movement = TYPE_MVT;
+        mvtstk.u_origin_movement = ORIGIN_RECEPT;
+        mvtstk.u_model = politem.model;
+        mvtstk.u_quantity = qty;
+        mvtstk.u_stock = rcs.stockroom;
+        mvtstk.u_date_movement = receivedate;
+        mvtstk.u_product_catalog = politem.product_catalog;
+		mvtstk.u_vendor = politem.vendor;
+		mvtstk.u_rcllinevendor = rclid;		
+
+        // Search Asset Consumable for this receipt.
+		var asset = new GlideRecord('alm_consumable');
+		asset.addQuery('model', politem.model);
+        asset.addQuery('install_status', '6');
+        asset.addQuery('substatus', 'available');
+        asset.addQuery('stockroom', rcs.stockroom);
+        asset.query();
+        if (asset.next()){
+            mvtstk.u_asset = asset.sys_id;
+		}
+
+        mvtstk.insert();
+    },
+
+    type: 'StockMovementUtils'
+};]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-07-06 10:42:10</sys_created_on>
+        <sys_id>5bbcdc8283a66e1048d6ccc6feaad3f1</sys_id>
+        <sys_mod_count>63</sys_mod_count>
+        <sys_name>StockMovementUtils</sys_name>
+        <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
+        <sys_update_name>sys_script_include_5bbcdc8283a66e1048d6ccc6feaad3f1</sys_update_name>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-12-16 10:48:13</sys_updated_on>
+    </sys_script_include>
+</record_update>

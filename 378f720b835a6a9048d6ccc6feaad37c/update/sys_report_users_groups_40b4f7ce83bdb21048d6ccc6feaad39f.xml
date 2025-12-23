@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_report_users_groups">
+    <sys_report_users_groups action="INSERT_OR_UPDATE">
+        <group_id/>
+        <report_id display_value="Statistic Movement Stock">c0b4f7ce83bdb21048d6ccc6feaad39e</report_id>
+        <sys_class_name>sys_report_users_groups</sys_class_name>
+        <sys_created_by>BL62F3EN</sys_created_by>
+        <sys_created_on>2025-12-15 15:47:55</sys_created_on>
+        <sys_id>40b4f7ce83bdb21048d6ccc6feaad39f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>c0b4f7ce83bdb21048d6ccc6feaad39e</sys_name>
+        <sys_package display_value="stock movement" source="x_606284_stock_mov">378f720b835a6a9048d6ccc6feaad37c</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="stock movement">378f720b835a6a9048d6ccc6feaad37c</sys_scope>
+        <sys_update_name>sys_report_users_groups_40b4f7ce83bdb21048d6ccc6feaad39f</sys_update_name>
+        <sys_updated_by>BL62F3EN</sys_updated_by>
+        <sys_updated_on>2025-12-15 15:47:55</sys_updated_on>
+        <user_id display_value="Bruno LINZBERGER">f9fe3b2847200210ac8adbe4116d437a</user_id>
+    </sys_report_users_groups>
+</record_update>
